@@ -123,7 +123,7 @@ public class GetFruInfoRunner {
 
         // new action to getCipherSuite
         CipherSuite cs = new CipherSuite((byte) 0, (byte) 1, (byte) 1,(byte) 1);
-        Connection connection = connector.getAsyncConnector().getConnectionManager().getConnection(0);
+        Connection connection = connector.getAsyncConnector().getConnectionManager().getConnection(handle.getHandle());
         connection.getStateMachine().setCurrent(new Ciphers());
         connector.getChannelAuthenticationCapabilities(handle, cs, PrivilegeLevel.User);
         System.out.println("Channel authentication capabilities receivied");
